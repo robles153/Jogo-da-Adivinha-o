@@ -24,7 +24,7 @@ int main()
 
     if(chute == numerosecreto){
         printf("\n\t\t\t\tParabens ! Você Acertou\n");
-        printf("\t\t\t\tJogue de novo você é um bom jogador1!");
+        printf("\t\t\t\tJogue de novo você é um bom jogador!\n\n");
     }
     else {
 
@@ -39,3 +39,4 @@ int main()
 
     return 0;
 }
+
