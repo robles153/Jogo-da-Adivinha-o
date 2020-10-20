@@ -18,14 +18,23 @@ int main()
     printf("\t\t\t\t* Bem-Vindo ao jogo da Adivinhação *\n");
     printf("\t\t\t\t************************************\n");
 
-for(int i = 1; i <=NUMERO_DE_TENTATIVAS; i++){
+for(int i = 1; i <=NUMERO_DE_TENTATIVAS; i++)
+{
        printf("\n\n\t\t\t\tQual é o seu %dº chute? ", i);
        scanf("%d", &chute);
        printf("\n\t\t\t\tSeu %dº chute foi %d!\n",i, chute);
 
+       if(chute < 0)
+	   { printf("\n\t\t\t\tVocê NÃO pode numeros negativos\n");
+	   i--;
+
+	   }
+
        int acertou = chute ==numerosecreto;
     // imprimirá 0 quando a condição for falsa,
     // e 1 quando ela for verdadeira.
+
+
 
        printf("\n\t\t\t\tAcertou: %d\n", acertou);
 
@@ -52,5 +61,3 @@ for(int i = 1; i <=NUMERO_DE_TENTATIVAS; i++){
 
     return 0;
 }
-
-
