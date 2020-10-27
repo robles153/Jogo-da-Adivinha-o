@@ -8,8 +8,12 @@ int main()
     setlocale(LC_ALL, "Portuguese");
 
     int chute;
-    int numerosecreto=42;
+    int acertou = 0;
     int tentativas =1;
+    double pontos = 1000;
+
+    srand(time(0));
+    int numerosecreto = rand()% 100;
 
 
     printf("\n\t\t\t\t************************************\n");
@@ -19,8 +23,8 @@ int main()
 
     while(1)
 {
-    printf("Tentativa %d \n", tentativas);
-       printf("\n\n\t\t\t\tQual é o seu  chute? ");
+
+       printf("\n\n\t\t\t\tQual é o seu  chute? ", tentativas       );
        scanf("%d", &chute);
        printf("\n\t\t\t\tSeu  chute foi %d!\n", chute);
 
@@ -32,6 +36,7 @@ int main()
 	   possa existir dentro do seu bloco de código*/
 
 	   }
+
 
        int acertou = (chute ==numerosecreto);
        int maior = chute > numerosecreto;
@@ -56,9 +61,11 @@ int main()
       }
 
 
+
     printf("\n\n\t\t\t\tFIM DE JOGO!\n\n");
     printf("\n\t\t\t\tVoê Acertou em %dª tentativas!\n\n", tentativas);
 
 
     return 0;
 }
+
