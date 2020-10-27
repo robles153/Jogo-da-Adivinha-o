@@ -1,3 +1,8 @@
+jogo da Adivinhação em construção usando linguagem C.
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
