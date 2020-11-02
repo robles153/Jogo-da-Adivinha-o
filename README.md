@@ -16,6 +16,9 @@ int main()
     int acertou = 0;
     int tentativas =1;
     double pontos = 1000;
+    int nivel;
+    int totaldetentativas;
+    
 
     srand(time(0));
     int numerosecreto = rand()% 100;
@@ -25,13 +28,30 @@ int main()
     printf("\t\t\t\t* Bem-Vindo ao jogo da Adivinhação *\n");
     printf("\t\t\t\t************************************\n");
 
+    printf("\n\t\t\t\tQual o Nivel de Difuculdade?");
+    printf("\n\n\t\t\t\t(1) FACIL (2) MEDIO (3) DIFICIL\n");
+    printf("\n\t\t\t\tEscolha: ");
+    scanf("%d", &nivel);
 
-    while(1)
+    switch(nivel) {
+    	case 1 :
+    		totaldetentativas = 20;
+    		break;
+    	case 2 :
+			totaldetentativas = 15;
+			break;
+		default:
+			totaldetentativas = 6;
+			break;
+	}
+	int i;
+	
+    for(i=1; i<= totaldetentativas; i++)
 {
-
-       printf("\n\n\t\t\t\tQual é o seu  chute? ", tentativas       );
+	printf("\n\t\t\t\tTentativa %d de %d!\n", i, totaldetentativas);
+       printf("\n\n\t\t\t\tQual é o seu %dº.  chute? ", i  );
        scanf("%d", &chute);
-       printf("\n\t\t\t\tSeu  chute foi %d!\n", chute);
+
 
        if(chute < 0)
 	   { printf("\n\t\t\t\tVocê NÃO pode Chutar numeros NEGATIVOS\n");
@@ -41,6 +61,7 @@ int main()
 	   possa existir dentro do seu bloco de código*/
 
 	   }
+	   printf("\n\t\t\t\tSeu %dº. chute foi %d\n",i, chute);
 
 
        int acertou = (chute ==numerosecreto);
@@ -63,14 +84,22 @@ int main()
         }
         tentativas++;
 
+         double pontosperdidos = abs(chute- numerosecreto ) / 2.0;
+	     pontos = pontos - pontosperdidos;
+
       }
 
 
 
     printf("\n\n\t\t\t\tFIM DE JOGO!\n\n");
-    printf("\n\t\t\t\tVoê Acertou em %dª tentativas!\n\n", tentativas);
+    printf("\n\t\t\t\tVoê Acertou na %dª tentativas!\n\n", tentativas);
+
+
+    printf("\n\t\t\t\tVocê fez %.0f pontos!!!\n\n\n", pontos);
+
 
 
     return 0;
 }
+
 
