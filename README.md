@@ -1,5 +1,4 @@
-jogo da Adivinhação em construção usando linguagem C.
-
+jogo da Adivinhação usando linguagem C.
 
 
 
@@ -55,6 +54,7 @@ int main()
 
        if(chute < 0)
 	   { printf("\n\t\t\t\tVocê NÃO pode Chutar numeros NEGATIVOS\n");
+	   i--;
 
 
 	   continue; /* diz ao laço que ele deve ir direto para a próxima iteração,sem executar o restante de código que ainda
@@ -65,9 +65,7 @@ int main()
 
 
        int acertou = (chute ==numerosecreto);
-       int maior = chute > numerosecreto;
-
-
+       
 
        if(acertou){
             printf("\n\t\t\t\tParabens ! Você Acertou\n");
@@ -75,7 +73,7 @@ int main()
 
             break;/* para o loop caso o jogador acertar o numero secreto*/
     }
-    else if(maior){
+    else if(chute > numerosecreto){
             printf("\n\t\t\t\tSeu chute foi MAIOR que o Numero Secreto!\n");
         }
 
@@ -92,14 +90,21 @@ int main()
 
 
     printf("\n\n\t\t\t\tFIM DE JOGO!\n\n");
-    printf("\n\t\t\t\tVoê Acertou na %dª tentativas!\n\n", tentativas);
+    if (acertou)
+{
+	   printf("\n\t\t\t\tVoê Acertou na %dª tentativas!\n\n", tentativas);
+	   printf("\n\t\t\t\tVocê fez %.0f pontos!!!\n\n\n", pontos);
+	  } else {
+	   	
+	   	printf("\n\t\t\t\tVOCÊ PERDEU!!!\n\n\n");
+	   	printf("\n\t\t\t\tTENTE NOVAMENTE!!!\n\n\n");
+	   }
 
 
-    printf("\n\t\t\t\tVocê fez %.0f pontos!!!\n\n\n", pontos);
+    
 
 
 
     return 0;
 }
-
 
